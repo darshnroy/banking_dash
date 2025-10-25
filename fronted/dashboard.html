@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeonBank • Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body class="dark-bg">
+  <div class="bg-aurora"></div>
+
+  <div class="app-grid">
+    <aside class="sidebar glass" id="sidebar">
+      <div class="brand">
+        <div class="crest"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#g)"/>
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#00ffd5"/><stop offset="1" stop-color="#5b8cff"/></linearGradient></defs>
+        </svg></div>
+        <div class="brand-text">
+          <div class="brand-title">NeonBank</div>
+          <div class="brand-sub muted">Your account</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active">Overview</a>
+        <a class="nav-item">Transactions</a>
+        <a class="nav-item" id="logoutBtn">Sign Out</a>
+      </nav>
+
+      <div class="sidebar-footer muted">Banking made easy for you</div>
+    </aside>
+
+    <main class="main glass">
+      <header class="topbar">
+        <div>
+          <h2 id="welcomeMessage">Welcome</h2>
+          <div class="muted small" id="userEmail"></div>
+        </div>
+        <div class="top-actions">
+          <button id="toggleSidebar" class="icon-btn">☰</button>
+        </div>
+      </header>
+
+      <section class="summary-grid">
+        <div class="card neon">
+          <div class="card-title">Balance</div>
+          <div id="currentBalance" class="big">₹0.00</div>
+        </div>
+        <div class="card neon">
+          <div class="card-title">Total Income</div>
+          <div id="totalIncome" class="big">₹0.00</div>
+        </div>
+        <div class="card neon">
+          <div class="card-title">Total Expenses</div>
+          <div id="totalExpenses" class="big">₹0.00</div>
+        </div>
+      </section>
+
+      <section class="transactions-panel">
+        <div class="panel-head">
+          <h3>Recent Transactions</h3>
+          <div class="controls">
+            <select id="transactionFilter" class="select">
+              <option value="all">All</option>
+              <option value="credit">Credits</option>
+              <option value="debit">Debits</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="transactionsList" class="transactions-list">
+          <!-- rendered by JS -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="static/js/app.js"></script>
+</body>
+</html>

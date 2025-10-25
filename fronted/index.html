@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeonBank • Login</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body class="dark-bg">
+  <div class="bg-aurora"></div>
+
+  <main class="auth-wrap">
+    <div class="auth-card glass">
+      <div class="logo-crest">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#g)"/>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#00ffd5"/>
+              <stop offset="1" stop-color="#5b8cff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <h1 class="title">NeonBank</h1>
+      <p class="sub">Empowering Your Financial Future</p>
+
+      <div id="message" class="message hidden"></div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input name="email" type="email" placeholder="you@email.com" required />
+        <label>Password</label>
+        <input name="password" type="password" placeholder="••••••••" required />
+        <button type="submit" class="btn primary">Sign in</button>
+
+        <div class="row space">
+          <small class="muted">Demo: demo@example.com / demo1234</small>
+          <a href="#" id="showRegister" class="link">Create account</a>
+        </div>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="registerForm" class="form hidden">
+        <label>Username</label>
+        <input name="username" type="text" placeholder="Your name" required />
+        <label>Email</label>
+        <input name="email" type="email" placeholder="you@email.com" required />
+        <label>Password</label>
+        <input name="password" type="password" placeholder="Choose a password" required />
+        <button type="submit" class="btn accent">Create account</button>
+
+        <div class="row space">
+          <small class="muted"></small>
+          <a href="#" id="showLogin" class="link">Back to login</a>
+        </div>
+      </form>
+    </div>
+
+    <aside class="auth-side">
+      <h2>Welcome to NeonBank</h2>
+      <p class="muted">Your Trusted Digital Banking Partner.</p>
+      <ul class="features">
+        <li>Secure Transactions</li>
+        <li>Seamless Experience</li>
+        <li>Instant Access</li>
+      </ul>
+    </aside>
+  </main>
+
+  <script type="module" src="static/js/app.js"></script>
+</body>
+</html>

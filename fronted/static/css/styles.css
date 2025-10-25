@@ -1,0 +1,103 @@
+/* Dark Neon UI - frontend/static/css/styles.css
+   Mobile-first responsive layout, glass effect, neon glows.
+*/
+
+:root{
+  --bg-900:#071024;
+  --panel:#0b1220;
+  --muted:#9aa7c4;
+  --neon-1:#00ffd5;
+  --neon-2:#5b8cff;
+  --accent:#ff5bd6;
+  --danger:#ff6b6b;
+  --glass-border: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Segoe UI Emoji,Arial}
+body{margin:0;background:linear-gradient(180deg,#020612 0%, #071024 60%); color:#e6f0ff; min-height:100vh; overflow-y:auto}
+.dark-bg{position:relative;}
+
+/* animated aurora background */
+.bg-aurora{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background: radial-gradient(600px 200px at 10% 10%, rgba(91,140,255,0.08), transparent 10%),
+              radial-gradient(500px 160px at 90% 20%, rgba(0,255,213,0.06), transparent 10%),
+              radial-gradient(800px 300px at 50% 80%, rgba(255,91,214,0.03), transparent 10%);
+  filter: blur(40px);
+}
+
+/* glass panel */
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 6px 30px rgba(4,8,20,0.6);
+  border-radius: 14px;
+  position:relative;
+  z-index:2;
+}
+
+/* AUTH LAYOUT */
+.auth-wrap{display:flex;gap:24px;align-items:center;justify-content:center;min-height:100vh;padding:28px}
+.auth-card{width:420px;padding:28px}
+.auth-side{max-width:420px;color:var(--muted);padding:24px}
+.logo-crest{display:flex;justify-content:center}
+.title{margin:8px 0 4px;font-size:20px;text-align:center}
+.sub{margin:0 0 16px;text-align:center;color:var(--muted)}
+.form{display:flex;flex-direction:column;gap:10px}
+label{font-size:13px;color:var(--muted)}
+input{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#eaf6ff}
+.btn{padding:12px;border-radius:10px;border:none;font-weight:600;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--neon-1),var(--neon-2));color:#041025;box-shadow:0 6px 24px rgba(88,140,255,0.06)}
+.btn.accent{background:linear-gradient(90deg,var(--accent),#7b5aff);color:#041025}
+.row{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.link{color:var(--neon-1);text-decoration:none;font-weight:600}
+.muted{color:var(--muted)}
+.message{padding:10px;border-radius:8px;margin-bottom:8px}
+.message.error{background:rgba(255,90,90,0.06);border:1px solid rgba(255,90,90,0.12);color:var(--danger)}
+.message.success{background:rgba(0,255,213,0.06);border:1px solid rgba(0,255,213,0.08);color:var(--neon-1)}
+
+/* APP LAYOUT */
+.app-grid{display:grid;grid-template-columns:280px 1fr;gap:20px;padding:28px;min-height:100vh}
+.sidebar{padding:20px;min-height:calc(100vh - 56px)}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-title{font-weight:700}
+.brand-sub{font-size:13px;color:var(--muted)}
+.nav{margin-top:18px}
+.nav-item{display:block;padding:12px;border-radius:8px;color:#d9e8ff;margin-top:8px;cursor:pointer}
+.nav-item.active{background:linear-gradient(90deg, rgba(91,140,255,0.12), rgba(0,255,213,0.04));box-shadow:0 8px 18px rgba(27,38,79,0.4)}
+.sidebar-footer{margin-top:18px;font-size:13px;color:var(--muted)}
+
+.main{padding:20px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.topbar .small{font-size:13px;color:var(--muted)}
+.icon-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:#e6f0ff;cursor:pointer}
+
+/* Summary */
+.summary-grid{display:flex;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.card{padding:18px;border-radius:12px}
+.card-title{font-size:13px;color:var(--muted)}
+.big{font-size:20px;font-weight:700;margin-top:8px}
+.card.neon{border-left:4px solid var(--neon-2);box-shadow:0 8px 40px rgba(88,140,255,0.04)}
+
+/* Transactions */
+.transactions-panel{margin-top:8px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.select{padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.01);color:#890f94}
+.transactions-list{display:flex;flex-direction:column;gap:12px}
+.transaction-item{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)}
+.transaction-item .left{display:flex;gap:12px;align-items:center}
+.icon-circle{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.tx-desc{font-weight:600}
+.tx-meta{font-size:13px;color:var(--muted)}
+.transaction-amount.credit{color:var(--neon-1);font-weight:700}
+.transaction-amount.debit{color:var(--danger);font-weight:700}
+
+/* small screens */
+@media (max-width:900px){
+  .app-grid{grid-template-columns:1fr; padding:18px}
+  .sidebar{order:2;display:flex;justify-content:space-between;align-items:center; padding:12px}
+  .main{order:1}
+  .auth-wrap{flex-direction:column;padding:18px}
+  .auth-side{display:none}
+}
