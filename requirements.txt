@@ -27,4 +27,4 @@ typing-inspection==0.4.2
 typing_extensions==4.15.0
 uvicorn==0.38.0
 gunicorn==21.2.0
-pydantic-settings==2.1.1
+pydantic-settings==2.11.0
