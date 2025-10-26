@@ -1,11 +1,9 @@
 # backend/db.py
-from pymongo import MongoClient
+from motor.motor_asyncio import AsyncIOMotorClient
 from backend.config import settings
 
-# MongoDB client
-client = MongoClient(settings.MONGO_URL)  # <-- correct attribute name
-db = client[settings.DB_NAME]
+client = AsyncIOMotorClient(settings.MONGO_URL)
+db = client[settings.MONGO_DB]  # <- banking_dash
 
-# Collections
 users_col = db["users"]
 transactions_col = db["transactions"]
