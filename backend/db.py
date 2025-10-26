@@ -2,9 +2,10 @@
 from pymongo import MongoClient
 from backend.config import settings
 
-client = MongoClient(settings.MONGO_URI)
+# MongoDB client
+client = MongoClient(settings.MONGO_URL)  # <-- correct attribute name
 db = client[settings.DB_NAME]
 
-# collections
+# Collections
 users_col = db["users"]
 transactions_col = db["transactions"]
