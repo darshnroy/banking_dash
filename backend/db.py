@@ -1,9 +1,12 @@
-# backend/db.py
-from motor.motor_asyncio import AsyncIOMotorClient
-from backend.config import settings
+import os
+from pymongo import MongoClient
+from dotenv import load_dotenv
 
-client = AsyncIOMotorClient(settings.MONGO_URL)
-db = client[settings.MONGO_DB]  # <- banking_dash
+load_dotenv()  # loads variables from .env file
 
+MONGO_URI = os.getenv("MONGO_URI")  # get URI from environment variable
+client = MongoClient(MONGO_URI)
+
+db = client["banking_dash"]
 users_col = db["users"]
 transactions_col = db["transactions"]
