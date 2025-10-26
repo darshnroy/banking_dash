@@ -30,5 +30,5 @@ gunicorn==21.2.0
 pydantic-settings==2.11.0
 email-validator==2.2.0
 passlib[bcrypt]==1.7.4
-motor==4.3.4
+motor==3.7.1
 
