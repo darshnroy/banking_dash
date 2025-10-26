@@ -2,7 +2,8 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    MONGO_URI: str = "mongodb://localhost:27017"
+    MONGO_URL = "mongodb+srv://<USERNAME>:<PASSWORD>@<cluster-name>.mongodb.net/<DBNAME>?retryWrites=true&w=majority"
+
     DB_NAME: str = "banking_demo"
     JWT_SECRET: str = "change_this_secret_in_production"
     JWT_ALGORITHM: str = "HS256"
